@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "title": "Ultimate Combo — 8 Drumlets + 4 Burgers + Pepsi",
+    "description": "The ultimate crowd-pleaser! 8 hot drumlets, 4 juicy burgers, and a refreshing Pepsi — Monday & Tuesday only.",
+    "price": "Rs. 2,990",
+    "original_price": null,
+    "category": "combo",
+    "badge": "Monday & Tuesday",
+    "valid_until": "2027-02-09",
+    "image": "https://promolkwebsite.blob.core.windows.net/promotions/thumb/mypromo-4f770efab91d4ec4bc1b81d350c26205.jpg",
+    "order_url": "https://www.kfc.lk/menu/promotions/promtn--others",
+    "hot": true
+  },
+  {
+    "id": 2,
+    "title": "Ultimate Combo — 4 Drumlets + 2 Burgers + Pepsi",
+    "description": "Perfect for two! 4 crispy drumlets, 2 burgers, and a Pepsi at an unbeatable price. Mon & Tue only.",
+    "price": "Rs. 1,590",
+    "original_price": null,
+    "category": "combo",
+    "badge": "Monday & Tuesday",
+    "valid_until": "2027-02-09",
+    "image": "https://promolkwebsite.blob.core.windows.net/promotions/thumb/mypromo-8c4b16e5044b4cea833c7617ea4e1f1a.jpg",
+    "order_url": "https://www.kfc.lk/menu/promotions/promtn--others",
+    "hot": false
+  },
+  {
+    "id": 3,
+    "title": "Rice Fiesta Sawans",
+    "description": "A feast of flavour! KFC's special Rice Fiesta platter — loaded with chicken, rice, and sides for the whole family.",
+    "price": "Rs. 3,590",
+    "original_price": null,
+    "category": "new",
+    "badge": "New",
+    "valid_until": "2027-01-31",
+    "image": "https://promolkwebsite.blob.core.windows.net/promotions/thumb/mypromo-56a2f211fae04a6a9e924a73bab31fcf.jpg",
+    "order_url": "https://www.kfc.lk/menu/meals-and-beverages",
+    "hot": false
+  },
+  {
+    "id": 4,
+    "title": "Rice Packs",
+    "description": "Delicious KFC Rice Packs loaded with signature flavour. A satisfying meal at a wallet-friendly price.",
+    "price": "Rs. 890",
+    "original_price": null,
+    "category": "discount",
+    "badge": "Best Value",
+    "valid_until": "2026-12-31",
+    "image": "https://promolkwebsite.blob.core.windows.net/promotions/thumb/mypromo-191144740c5a4d0fbcef855cd8d9bd19.jpg",
+    "order_url": "https://www.kfc.lk/menu/mains",
+    "hot": false
+  },
+  {
+    "id": 5,
+    "title": "1 Pc Hot n Crispy Chicken",
+    "description": "Select any piece of your choice — golden, crispy, and finger lickin' good every single time.",
+    "price": "Rs. 990",
+    "original_price": null,
+    "category": "discount",
+    "badge": "Classic",
+    "valid_until": null,
+    "image": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/1pcchoicehc14cb274dd0e04d6bacf09c50825c79b7.jpg",
+    "order_url": "https://www.kfc.lk/menu/mains",
+    "hot": false
+  },
+  {
+    "id": 6,
+    "title": "Quarter / 2 Pc Hot n Crispy",
+    "description": "2 pieces of our signature crispy, juicy chicken — perfect for a satisfying solo meal.",
+    "price": "Rs. 1,540",
+    "original_price": null,
+    "category": "discount",
+    "badge": "Popular",
+    "valid_until": null,
+    "image": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/quarter2pchc9ef65c073e7b4f01a7ce12b0c326af47.jpg",
+    "order_url": "https://www.kfc.lk/menu/mains",
+    "hot": false
+  },
+  {
+    "id": 7,
+    "title": "Half / 4 Pc Hot n Crispy",
+    "description": "4 pieces of our signature crispy, juicy chicken — great for sharing or a hearty meal for one.",
+    "price": "Rs. 2,860",
+    "original_price": null,
+    "category": "combo",
+    "badge": "Family",
+    "valid_until": null,
+    "image": "https://admin-kfc-web.azurewebsites.net/images/mainmenu/half4pchc545082dbc8734caa86f6779187909323.jpg",
+    "order_url": "https://www.kfc.lk/menu/mains",
+    "hot": false
+  }
+]

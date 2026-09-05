@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Hut Sri Lanka — Offers & Promotions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #ee3224;
+      --red-dark: #b01c14;
+      --gold: #f5a623;
+      --gold-light: #ffc94d;
+      --red-glow: rgba(238,50,36,0.45);
+      --gold-glow: rgba(245,166,35,0.35);
+      --glass-bg: rgba(255,255,255,0.06);
+      --glass-border: rgba(255,255,255,0.1);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255,255,255,0.65);
+      --text-muted: rgba(255,255,255,0.38);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d0000;
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .bg {
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(180,20,10,0.38) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 70% at 85% 90%, rgba(245,166,35,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 100% 100% at 50% 50%, #1a0400 0%, #0d0000 100%);
+    }
+    .bg::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 75% 25%, rgba(245,166,35,0.06) 0%, transparent 38%),
+        radial-gradient(circle at 20% 75%, rgba(238,50,36,0.08) 0%, transparent 38%);
+      animation: bgpulse 8s ease-in-out infinite alternate;
+    }
+    @keyframes bgpulse { from { opacity: 0.55; } to { opacity: 1; } }
+
+    .wrapper { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(28px) saturate(1.6);
+      -webkit-backdrop-filter: blur(28px) saturate(1.6);
+      background: rgba(13,0,0,0.84);
+      border-bottom: 1px solid rgba(238,50,36,0.2);
+      padding: 0;
+    }
+    header::before {
+      content: ''; display: block; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--red), var(--gold), var(--gold-light), var(--gold), var(--red), transparent);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 14px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .logo-icon {
+      width: 50px; height: 50px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; line-height: 1;
+      box-shadow: 0 0 24px var(--red-glow), 0 4px 14px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+    .logo-text strong { display: block; font-size: 19px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+    .logo-text span { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .header-tag {
+      background: rgba(238,50,36,0.1); border: 1px solid rgba(238,50,36,0.25);
+      border-radius: 50px; padding: 7px 16px;
+      font-size: 12px; font-weight: 500; color: var(--text-secondary);
+      backdrop-filter: blur(10px); white-space: nowrap;
+    }
+    .header-tag span { color: var(--gold-light); font-weight: 600; }
+    .header-order-btn {
+      background: linear-gradient(135deg, var(--red), #ff4433);
+      color: #fff; text-decoration: none;
+      padding: 8px 18px; border-radius: 50px;
+      font-size: 12px; font-weight: 600;
+      box-shadow: 0 0 16px var(--red-glow);
+      transition: opacity 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .header-order-btn:hover { opacity: 0.88; box-shadow: 0 0 28px var(--red-glow); }
+
+    /* ── Banner ── */
+    .banner {
+      background: linear-gradient(135deg, rgba(238,50,36,0.13) 0%, rgba(60,10,5,0.2) 50%, rgba(245,166,35,0.08) 100%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 28px;
+    }
+    .banner-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .banner-left h2 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 4px; }
+    .banner-left p { font-size: 13px; color: var(--text-secondary); }
+    .banner-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 50px; padding: 5px 13px;
+      font-size: 11px; font-weight: 500; color: var(--text-secondary);
+      backdrop-filter: blur(8px);
+    }
+    .chip.red  { border-color: rgba(238,50,36,0.42);  color: #ff7060; background: rgba(238,50,36,0.1); }
+    .chip.gold { border-color: rgba(245,166,35,0.42); color: var(--gold-light); background: rgba(245,166,35,0.1); }
+
+    /* ── Filters ── */
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding: 28px 20px 32px; }
+    .filter-btn {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 50px; padding: 9px 22px;
+      font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+      color: var(--text-secondary); cursor: pointer; transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+    .filter-btn:hover { background: rgba(238,50,36,0.15); border-color: rgba(238,50,36,0.4); color: #fff; }
+    .filter-btn.active { background: var(--red); border-color: var(--red); color: #fff; box-shadow: 0 0 20px var(--red-glow); }
+
+    /* ── Grid ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 22px; padding: 0 0 60px; }
+
+    /* ── Card ── */
+    .card {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 20px; overflow: hidden;
+      backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex; flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 28px var(--red-glow);
+      border-color: rgba(238,50,36,0.35);
+    }
+
+    .card-visual { position: relative; height: 210px; overflow: hidden; }
+    .card-visual img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease; display: block;
+    }
+    .card:hover .card-visual img { transform: scale(1.07); }
+    .card-visual .food-emoji {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      font-size: 72px; line-height: 1;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.6));
+      z-index: 1; display: none;
+    }
+    .card-visual-overlay {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(to bottom, transparent 40%, rgba(13,0,0,0.75) 100%);
+    }
+    .card-visual::before {
+      content: ''; position: absolute; border-radius: 50%;
+      width: 130px; height: 130px;
+      background: radial-gradient(circle, rgba(245,166,35,0.12), transparent);
+      top: -30px; right: -30px; z-index: 1;
+    }
+
+    /* Gradients */
+    .grad-1 { background: linear-gradient(135deg, #2a0400 0%, #6b0d06 50%, #0d0000 100%); }
+    .grad-2 { background: linear-gradient(135deg, #1a1000 0%, #4d2e00 50%, #0d0000 100%); }
+    .grad-3 { background: linear-gradient(135deg, #001220 0%, #003060 50%, #0d0000 100%); }
+    .grad-4 { background: linear-gradient(135deg, #200020 0%, #5c005c 50%, #0d0000 100%); }
+    .grad-5 { background: linear-gradient(135deg, #001a10 0%, #004030 50%, #0d0000 100%); }
+    .grad-6 { background: linear-gradient(135deg, #2a0400 0%, #8c2010 50%, #0d0000 100%); }
+    .grad-7 { background: linear-gradient(135deg, #1a0a00 0%, #503000 50%, #0d0000 100%); }
+    .grad-8 { background: linear-gradient(135deg, #000820 0%, #001850 50%, #0d0000 100%); }
+
+    /* Badges */
+    .badge {
+      position: absolute; top: 12px; left: 12px; z-index: 2;
+      padding: 4px 11px; border-radius: 50px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .badge-combo   { background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.5); color: var(--gold-light); }
+    .badge-discount{ background: rgba(238,50,36,0.22); border: 1px solid rgba(238,50,36,0.5); color: #ff7060; }
+    .badge-limited { background: rgba(255,200,0,0.18); border: 1px solid rgba(255,200,0,0.42); color: #ffd700; }
+    .badge-new     { background: rgba(0,200,100,0.18); border: 1px solid rgba(0,200,100,0.4); color: #00e676; }
+    .badge-ayce    { background: rgba(238,50,36,0.3); border: 1px solid rgba(238,50,36,0.6); color: #ff7060; }
+
+    .hot-badge {
+      position: absolute; top: 12px; right: 12px; z-index: 2;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50px; padding: 4px 10px; font-size: 10px; font-weight: 700; color: #000;
+      box-shadow: 0 0 12px var(--gold-glow);
+      animation: hotpulse 2s ease-in-out infinite;
+    }
+    @keyframes hotpulse {
+      0%,100% { box-shadow: 0 0 12px var(--gold-glow); }
+      50%      { box-shadow: 0 0 24px rgba(245,166,35,0.7); }
+    }
+
+    .card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .card-title { font-size: 15px; font-weight: 700; color: #fff; line-height: 1.35; }
+    .card-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; }
+    .price { font-size: 18px; font-weight: 800; color: var(--gold-light); }
+    .price.red { color: #ff7060; }
+    .validity { font-size: 10px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+    .validity::before { content: '⏳'; font-size: 9px; }
+
+    .order-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: linear-gradient(135deg, var(--red), #ff4433);
+      color: #fff; text-decoration: none;
+      padding: 9px 18px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600;
+      transition: opacity 0.2s, box-shadow 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .order-btn:hover { opacity: 0.88; box-shadow: 0 0 20px var(--red-glow); transform: scale(1.04); }
+    .order-btn svg { width: 13px; height: 13px; }
+
+    .empty { display: none; text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 15px; grid-column: 1/-1; }
+    .empty.show { display: block; }
+
+    footer { border-top: 1px solid var(--glass-border); padding: 28px 20px; text-align: center; }
+    footer p { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
+    footer a { color: var(--gold-light); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .banner { padding: 16px 20px; }
+      .filters { padding: 20px 20px 24px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="https://www.pizzahut.lk" target="_blank" rel="noopener">
+      <div class="logo-icon">🍕</div>
+      <div class="logo-text">
+        <strong>Pizza Hut Sri Lanka</strong>
+        <span>No One OutPizzas the Hut</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <div class="header-tag">🍕 Deals updated <span>Sep 2026</span></div>
+      <a class="header-order-btn" href="https://www.pizzahut.lk" target="_blank" rel="noopener">Order Now →</a>
+    </div>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="banner-inner">
+    <div class="banner-left">
+      <h2>🍕 Today's Best Pizza Hut Deals</h2>
+      <p>Latest offers &amp; promotions from Pizza Hut Sri Lanka — updated September 2026</p>
+    </div>
+    <div class="banner-chips">
+      <span class="chip gold">⭐ New Arrivals from Rs. 1,100</span>
+      <span class="chip red">🔥 All You Can Eat Rs. 2,500</span>
+      <span class="chip">🍽 Lunch Deal Rs. 600</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All Offers</button>
+    <button class="filter-btn" data-filter="discount">🏷 Discounts</button>
+    <button class="filter-btn" data-filter="combo">🍕 Combos</button>
+    <button class="filter-btn" data-filter="limited">⏳ Limited Time</button>
+    <button class="filter-btn" data-filter="new">✨ New Items</button>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="empty" id="empty">No offers in this category right now. Check back soon! 🍕</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrapper">
+    <p>
+      Offers sourced from <a href="https://www.pizzahut.lk" target="_blank">pizzahut.lk</a> &amp; verified promotions as of September 2026.<br/>
+      Prices and availability may change. Order via <a href="https://www.pizzahut.lk" target="_blank">pizzahut.lk</a> or call <a href="tel:+94112729729">+94 11 272 9729</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+  const promos = [
+    {
+      title: "All You Can Eat — Unlimited Pizza",
+      description: "Eat as much pizza as you want within 30 minutes! The ultimate Pizza Hut experience for serious pizza lovers. Dine-in only.",
+      price: "Rs. 2,500/person", category: "limited", badge: "Fan Favourite", badgeClass: "badge-ayce",
+      priceClass: "red", valid_until: null, emoji: "🍕", grad: "grad-1", hot: true,
+      image: "https://synergyy.com/wp-content/uploads/2023/02/332113700_753154626049402_5289733416805536477_n.jpg",
+      order_url: "https://www.pizzahut.lk"
+    },
+    {
+      title: "Valentine's Day Combo 2026",
+      description: "Spoil your loved one! Medium Pizza + Garlic Bread + Lava Cake (Rs. 2,390) or upgrade to Large Pizza + Appetizer + 2 Lava Cakes (Rs. 4,490).",
+      price: "From Rs. 2,390", category: "combo", badge: "Special", badgeClass: "badge-combo",
+      priceClass: "", valid_until: "2026-02-15", emoji: "❤️", grad: "grad-2", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/mypromo-1b8cc9f52e5c4f7b97e0c8f1812a1f53.jpg",
+      order_url: "https://www.pizzahut.lk"
+    },
+    {
+      title: "Crispy Korean Chicken Pizza",
+      description: "A bold new arrival — crispy Korean-style chicken with a signature sauce on your favourite Pizza Hut crust. Try it in personal, medium or large.",
+      price: "From Rs. 1,240", category: "new", badge: "New Arrival", badgeClass: "badge-new",
+      priceClass: "", valid_until: null, emoji: "🇰🇷", grad: "grad-3", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/mypromo.lk-promo-ff7e44c1a2d94b919457c304c6fe7269.jpg",
+      order_url: "https://www.pizzahut.lk/menu/pizza/pan-and-other-crust"
+    },
+    {
+      title: "Meat Lovers — Beef",
+      description: "A meat feast for beef fans — loaded with premium beef toppings on a perfectly baked Pan crust. A Pizza Hut Favourites classic.",
+      price: "From Rs. 1,350", category: "discount", badge: "Popular", badgeClass: "badge-discount",
+      priceClass: "", valid_until: null, emoji: "🥩", grad: "grad-4", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/promo.lk-promo-141654aceb864defa773d1efec76903c.jpg",
+      order_url: "https://www.pizzahut.lk/menu/pizza/pan-and-other-crust"
+    },
+    {
+      title: "Lunch Time Deal",
+      description: "Between 11AM – 3PM, get 1 Classic Personal Pan Pizza + 1 Cup of Coke, or 1 Baked Rice + 1 Cup of Coke. Dine-in only.",
+      price: "Rs. 600", category: "limited", badge: "11AM – 3PM", badgeClass: "badge-limited",
+      priceClass: "red", valid_until: null, emoji: "⏰", grad: "grad-5", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/mypromo.lk-promo-ff7e44c1a2d94b919457c304c6fe7269.jpg",
+      order_url: "https://www.pizzahut.lk"
+    },
+    {
+      title: "Double Deal Combo",
+      description: "Classic Medium Pan Pizza + Garlic Bread + 750ml Coke from Rs. 1,150. Upgrade to Signature for Rs. 1,250. Add cheesy sides for only Rs. 100 more.",
+      price: "From Rs. 1,150", category: "combo", badge: "Value Combo", badgeClass: "badge-combo",
+      priceClass: "", valid_until: null, emoji: "🍕", grad: "grad-6", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/promo.lk-promo-141654aceb864defa773d1efec76903c.jpg",
+      order_url: "https://www.pizzahut.lk"
+    },
+    {
+      title: "Delight Pizzas",
+      description: "Everyday favourites — Veggie Masala, Chilli Chicken, Margherita, Sausage Delight and more. Affordable, delicious, and available in 3 sizes.",
+      price: "From Rs. 820", category: "discount", badge: "Best Value", badgeClass: "badge-discount",
+      priceClass: "", valid_until: null, emoji: "🌿", grad: "grad-7", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/mypromo.lk-promo-ff7e44c1a2d94b919457c304c6fe7269.jpg",
+      order_url: "https://www.pizzahut.lk/menu/pizza/pan-and-other-crust"
+    },
+    {
+      title: "Chocolate Melt Lava Cake",
+      description: "Warm, rich, and impossibly gooey — the perfect ending to any Pizza Hut meal. Order one (or two) to share.",
+      price: "Rs. 590", category: "discount", badge: "Dessert", badgeClass: "badge-discount",
+      priceClass: "red", valid_until: null, emoji: "🍫", grad: "grad-8", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/mypromo-1b8cc9f52e5c4f7b97e0c8f1812a1f53.jpg",
+      order_url: "https://www.pizzahut.lk"
+    }
+  ];
+
+  const filterMap = {
+    all:      () => true,
+    discount: p => p.category === 'discount',
+    combo:    p => p.category === 'combo',
+    limited:  p => p.category === 'limited',
+    new:      p => p.category === 'new'
+  };
+
+  function formatDate(d) {
+    if (!d) return null;
+    return new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function buildCard(p) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const hotHTML   = p.hot ? `<div class="hot-badge">⭐ HOT</div>` : '';
+    const validHTML = p.valid_until ? `<span class="validity">Until ${formatDate(p.valid_until)}</span>` : '';
+
+    card.innerHTML = `
+      <div class="card-visual ${p.grad}">
+        <img src="${p.image}" alt="${p.title}" loading="lazy"
+             onerror="this.style.display='none';this.parentElement.querySelector('.food-emoji').style.display='block'">
+        <div class="food-emoji">${p.emoji}</div>
+        <div class="card-visual-overlay"></div>
+        <span class="badge ${p.badgeClass}">${p.badge}</span>
+        ${hotHTML}
+      </div>
+      <div class="card-body">
+        <div class="card-title">${p.title}</div>
+        <div class="card-desc">${p.description}</div>
+        <div class="card-footer">
+          <div><div class="price ${p.priceClass}">${p.price}</div>${validHTML}</div>
+          <a class="order-btn" href="${p.order_url}" target="_blank" rel="noopener">
+            Order Now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+      </div>`;
+    return card;
+  }
+
+  function render(filter) {
+    const grid = document.getElementById('grid');
+    const empty = document.getElementById('empty');
+    grid.querySelectorAll('.card').forEach(c => c.remove());
+    const filtered = promos.filter(filterMap[filter] || filterMap.all);
+    if (filtered.length === 0) { empty.classList.add('show'); }
+    else { empty.classList.remove('show'); filtered.forEach(p => grid.appendChild(buildCard(p))); }
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    });
+  });
+
+  render('all');
+</script>
+
+<script>
+(async function() {
+  const BRAND = 'pizzahut';
+  let statusEl = document.createElement('div');
+  statusEl.id = 'live-status';
+  statusEl.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px 16px;font-size:0.75rem;color:rgba(255,255,255,0.6);z-index:999;display:none;';
+  document.body.appendChild(statusEl);
+
+  function showStatus(msg, color) {
+    statusEl.style.display = 'block';
+    statusEl.style.borderColor = color || 'rgba(255,255,255,0.1)';
+    statusEl.textContent = msg;
+    setTimeout(() => statusEl.style.display = 'none', 4000);
+  }
+
+  try {
+    const r = await fetch(`/api/offers/${BRAND}`, {signal: AbortSignal.timeout(3000)});
+    if (!r.ok) { showStatus('ℹ️ Click Refresh on homepage for latest offers'); return; }
+    const d = await r.json();
+    if (!d.promos || !d.promos.length) return;
+
+    // Merge server promos into existing cards — update images if we have them
+    const cards = document.querySelectorAll('.card');
+    d.promos.forEach((p, i) => {
+      if (i < cards.length && p.image) {
+        const img = cards[i].querySelector('img');
+        if (img && p.image) img.src = p.image;
+        if (p.title) {
+          const h = cards[i].querySelector('.card-title, h3, .title');
+          if (h) h.textContent = p.title;
+        }
+        if (p.validity) {
+          const v = cards[i].querySelector('.validity, .valid, .date');
+          if (v) v.textContent = '📅 Valid until: ' + p.validity;
+        }
+      }
+    });
+    showStatus(`✓ Live data loaded · ${d.updated}`, 'rgba(76,175,80,0.5)');
+  } catch(e) {
+    // Server not running — silently use hardcoded data
+  }
+})();
+</script>
+</body>
+</html>

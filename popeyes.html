@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Popeyes Sri Lanka — Offers & Promotions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #f26522;
+      --orange-light: #ff8c45;
+      --red: #c8102e;
+      --orange-glow: rgba(242,101,34,0.5);
+      --red-glow: rgba(200,16,46,0.4);
+      --glass-bg: rgba(255,255,255,0.06);
+      --glass-border: rgba(255,255,255,0.1);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255,255,255,0.65);
+      --text-muted: rgba(255,255,255,0.38);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0c0500;
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .bg {
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 18% 10%, rgba(200,60,0,0.38) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 70% at 85% 90%, rgba(200,16,46,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 100% 100% at 50% 50%, #1a0800 0%, #0c0500 100%);
+    }
+    .bg::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(242,101,34,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 18% 78%, rgba(200,16,46,0.07) 0%, transparent 38%);
+      animation: bgpulse 9s ease-in-out infinite alternate;
+    }
+    @keyframes bgpulse { from { opacity: 0.5; } to { opacity: 1; } }
+
+    .wrapper { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(28px) saturate(1.6);
+      -webkit-backdrop-filter: blur(28px) saturate(1.6);
+      background: rgba(12,5,0,0.85);
+      border-bottom: 1px solid rgba(242,101,34,0.2);
+      padding: 0;
+    }
+    header::before {
+      content: ''; display: block; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--red), var(--orange), var(--orange-light), var(--orange), var(--red), transparent);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 14px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .logo-icon {
+      width: 50px; height: 50px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--orange), #c84e10);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; line-height: 1;
+      box-shadow: 0 0 24px var(--orange-glow), 0 4px 14px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+    .logo-text strong { display: block; font-size: 19px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+    .logo-text span { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .header-tag {
+      background: rgba(242,101,34,0.1); border: 1px solid rgba(242,101,34,0.28);
+      border-radius: 50px; padding: 7px 16px;
+      font-size: 12px; font-weight: 500; color: var(--text-secondary);
+      backdrop-filter: blur(10px); white-space: nowrap;
+    }
+    .header-tag span { color: var(--orange-light); font-weight: 600; }
+    .header-order-btn {
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      color: #fff; text-decoration: none;
+      padding: 8px 18px; border-radius: 50px;
+      font-size: 12px; font-weight: 600;
+      box-shadow: 0 0 16px var(--orange-glow);
+      transition: opacity 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .header-order-btn:hover { opacity: 0.88; box-shadow: 0 0 28px var(--orange-glow); }
+
+    /* ── Banner ── */
+    .banner {
+      background: linear-gradient(135deg, rgba(242,101,34,0.13) 0%, rgba(60,20,5,0.2) 50%, rgba(200,16,46,0.08) 100%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 28px;
+    }
+    .banner-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .banner-left h2 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 4px; }
+    .banner-left p { font-size: 13px; color: var(--text-secondary); }
+    .banner-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 50px; padding: 5px 13px;
+      font-size: 11px; font-weight: 500; color: var(--text-secondary);
+      backdrop-filter: blur(8px);
+    }
+    .chip.orange { border-color: rgba(242,101,34,0.45); color: var(--orange-light); background: rgba(242,101,34,0.1); }
+    .chip.red    { border-color: rgba(200,16,46,0.42);  color: #ff6070; background: rgba(200,16,46,0.1); }
+
+    /* ── Filters ── */
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding: 28px 20px 32px; }
+    .filter-btn {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 50px; padding: 9px 22px;
+      font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+      color: var(--text-secondary); cursor: pointer; transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+    .filter-btn:hover { background: rgba(242,101,34,0.15); border-color: rgba(242,101,34,0.4); color: #fff; }
+    .filter-btn.active { background: var(--orange); border-color: var(--orange-light); color: #fff; box-shadow: 0 0 20px var(--orange-glow); }
+
+    /* ── Grid ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 22px; padding: 0 0 60px; }
+
+    /* ── Card ── */
+    .card {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 20px; overflow: hidden;
+      backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex; flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 28px var(--orange-glow);
+      border-color: rgba(242,101,34,0.38);
+    }
+
+    .card-visual { position: relative; height: 210px; overflow: hidden; }
+    .card-visual img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease; display: block;
+    }
+    .card:hover .card-visual img { transform: scale(1.07); }
+    .card-visual .food-emoji {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      font-size: 72px; line-height: 1;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.6));
+      z-index: 1; display: none;
+    }
+    .card-visual-overlay {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(to bottom, transparent 40%, rgba(12,5,0,0.78) 100%);
+    }
+    .card-visual::before {
+      content: ''; position: absolute; border-radius: 50%;
+      width: 130px; height: 130px;
+      background: radial-gradient(circle, rgba(242,101,34,0.14), transparent);
+      top: -30px; right: -30px; z-index: 1;
+    }
+
+    /* Gradients */
+    .grad-1 { background: linear-gradient(135deg, #2a0f00 0%, #6b2800 50%, #0c0500 100%); }
+    .grad-2 { background: linear-gradient(135deg, #1a0005 0%, #5c0018 50%, #0c0500 100%); }
+    .grad-3 { background: linear-gradient(135deg, #1a1000 0%, #503000 50%, #0c0500 100%); }
+    .grad-4 { background: linear-gradient(135deg, #001a10 0%, #004530 50%, #0c0500 100%); }
+    .grad-5 { background: linear-gradient(135deg, #0a0020 0%, #280060 50%, #0c0500 100%); }
+    .grad-6 { background: linear-gradient(135deg, #2a0f00 0%, #7a3000 50%, #0c0500 100%); }
+    .grad-7 { background: linear-gradient(135deg, #001520 0%, #003555 50%, #0c0500 100%); }
+    .grad-8 { background: linear-gradient(135deg, #1a0010 0%, #4a003a 50%, #0c0500 100%); }
+
+    /* Badges */
+    .badge {
+      position: absolute; top: 12px; left: 12px; z-index: 2;
+      padding: 4px 11px; border-radius: 50px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .badge-combo   { background: rgba(242,101,34,0.22); border: 1px solid rgba(242,101,34,0.5); color: var(--orange-light); }
+    .badge-discount{ background: rgba(200,16,46,0.22); border: 1px solid rgba(200,16,46,0.5); color: #ff6070; }
+    .badge-limited { background: rgba(255,200,0,0.18); border: 1px solid rgba(255,200,0,0.42); color: #ffd700; }
+    .badge-new     { background: rgba(0,200,100,0.18); border: 1px solid rgba(0,200,100,0.4); color: #00e676; }
+    .badge-bank    { background: rgba(100,0,200,0.2); border: 1px solid rgba(160,0,255,0.4); color: #d06aff; }
+
+    .hot-badge {
+      position: absolute; top: 12px; right: 12px; z-index: 2;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      border-radius: 50px; padding: 4px 10px; font-size: 10px; font-weight: 700; color: #fff;
+      box-shadow: 0 0 12px var(--orange-glow);
+      animation: hotpulse 2s ease-in-out infinite;
+    }
+    @keyframes hotpulse {
+      0%,100% { box-shadow: 0 0 12px var(--orange-glow); }
+      50%      { box-shadow: 0 0 24px rgba(242,101,34,0.75); }
+    }
+
+    .card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .card-title { font-size: 15px; font-weight: 700; color: #fff; line-height: 1.35; }
+    .card-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; }
+    .price { font-size: 18px; font-weight: 800; color: var(--orange-light); }
+    .price.red { color: #ff6070; }
+    .validity { font-size: 10px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+    .validity::before { content: '⏳'; font-size: 9px; }
+
+    .order-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      color: #fff; text-decoration: none;
+      padding: 9px 18px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600;
+      transition: opacity 0.2s, box-shadow 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .order-btn:hover { opacity: 0.88; box-shadow: 0 0 20px var(--orange-glow); transform: scale(1.04); }
+    .order-btn svg { width: 13px; height: 13px; }
+
+    .empty { display: none; text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 15px; grid-column: 1/-1; }
+    .empty.show { display: block; }
+
+    footer { border-top: 1px solid var(--glass-border); padding: 28px 20px; text-align: center; }
+    footer p { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
+    footer a { color: var(--orange-light); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .banner { padding: 16px 20px; }
+      .filters { padding: 20px 20px 24px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="https://www.popeyes.lk" target="_blank" rel="noopener">
+      <div class="logo-icon">🍗</div>
+      <div class="logo-text">
+        <strong>Popeyes Sri Lanka</strong>
+        <span>Louisiana Fast — Chicken Done Right</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <div class="header-tag">🌶 Deals updated <span>Sep 2026</span></div>
+      <a class="header-order-btn" href="https://www.popeyes.lk" target="_blank" rel="noopener">Order Now →</a>
+    </div>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="banner-inner">
+    <div class="banner-left">
+      <h2>🔥 Today's Best Popeyes Deals</h2>
+      <p>Live offers &amp; promotions from Popeyes Sri Lanka — updated September 2026</p>
+    </div>
+    <div class="banner-chips">
+      <span class="chip orange">⚡ 50% Off 8-Piece Chicken</span>
+      <span class="chip">🍱 Big Box Combos from Rs. 1,550</span>
+      <span class="chip red">💳 Up to 25% Off with Bank Cards</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All Offers</button>
+    <button class="filter-btn" data-filter="discount">🏷 Discounts</button>
+    <button class="filter-btn" data-filter="combo">🍗 Combos</button>
+    <button class="filter-btn" data-filter="limited">⏳ Limited Time</button>
+    <button class="filter-btn" data-filter="new">✨ New Items</button>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="empty" id="empty">No offers in this category right now. Check back soon! 🍗</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrapper">
+    <p>
+      Offers sourced from <a href="https://www.mypromo.lk/popeyeslk/promotions" target="_blank">mypromo.lk</a> &amp; verified promotions as of September 2026.<br/>
+      Prices and availability may change. Order via <a href="https://www.popeyes.lk" target="_blank">popeyes.lk</a> or call <a href="tel:+94115123123">+94 11 512 3123</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+  const promos = [
+    {
+      title: "50% Off Eight-Piece Chicken",
+      description: "Half price on a full 8-piece Louisiana-style fried chicken! One of Popeyes' boldest deals — crispy, juicy, and bursting with Cajun flavour.",
+      price: "50% OFF", category: "discount", badge: "Flash Deal", badgeClass: "badge-discount",
+      priceClass: "red", valid_until: "2026-08-31", emoji: "🍗", grad: "grad-1", hot: true,
+      image: "https://mypromo.azureedge.net/promotions/thumb/mypromo-835c668bf9d94318bffc651d2d04da54.jpg",
+      order_url: "https://www.mypromo.lk/popeyeslk/promotions"
+    },
+    {
+      title: "Crispy Big Box for 2",
+      description: "1 Chicken Sandwich + 1 Crispy Chicken Wrap + Cajun Fries + 4pc Peri Peri Wings. The ultimate duo deal — dine-in, takeaway or delivery.",
+      price: "Rs. 2,700", category: "combo", badge: "For Two", badgeClass: "badge-combo",
+      priceClass: "", valid_until: "2027-02-19", emoji: "🧺", grad: "grad-2", hot: false,
+      image: "https://mypromo.azureedge.net/promotions/thumb/mypromo-2ad04521e426463c8b07aeff07ecbf6d.jpg",
+      order_url: "https://www.mypromo.lk/popeyeslk/promotions"
+    },
+    {
+      title: "Free 8pc Peri Peri Wings",
+      description: "Get 8 spicy Peri Peri Wings FREE with your order! A sizzling bonus on top of your Popeyes meal — valid until end of year.",
+      price: "Rs. 2,800", category: "limited", badge: "Free Wings!", badgeClass: "badge-limited",
+      priceClass: "", valid_until: "2026-12-31", emoji: "🔥", grad: "grad-3", hot: false,
+      image: "https://mypromo.azureedge.net/promotions/thumb/mypromo-c236602e75274185bca92d21fd44490d.jpg",
+      order_url: "https://www.mypromo.lk/popeyeslk/promotions"
+    },
+    {
+      title: "Family Rice Combo — 8 Drumsticks",
+      description: "Feed the whole family! 8 crispy drumsticks packed with Popeyes' signature Louisiana seasoning, served with rice. A feast worth every bite.",
+      price: "Rs. 4,800", category: "combo", badge: "Family", badgeClass: "badge-combo",
+      priceClass: "", valid_until: "2026-08-31", emoji: "🍱", grad: "grad-4", hot: false,
+      image: "https://mypromo.azureedge.net/promotions/thumb/mypromo-e0c7859ae9fc4059bc273fa5daec9d1b.jpg",
+      order_url: "https://www.mypromo.lk/popeyeslk/promotions"
+    },
+    {
+      title: "Family Burger Combo with Drinks",
+      description: "A hearty family combo with multiple Popeyes burgers and refreshing drinks bundled together. Great for family outings or group orders.",
+      price: "Rs. 4,600", category: "combo", badge: "Family", badgeClass: "badge-combo",
+      priceClass: "", valid_until: "2026-08-31", emoji: "🍔", grad: "grad-5", hot: false,
+      image: "https://mypromo.azureedge.net/promotions/thumb/mypromo-c27f41e89e42400da4b830ae680d8e08.jpg",
+      order_url: "https://www.mypromo.lk/popeyeslk/promotions"
+    },
+    {
+      title: "25% Off with Credit Cards",
+      description: "Use your credit card and save 25% on your Popeyes order! Check with your bank for participating cards. Valid on dine-in and selected orders.",
+      price: "25% OFF", category: "discount", badge: "Bank Offer", badgeClass: "badge-bank",
+      priceClass: "red", valid_until: "2026-08-31", emoji: "💳", grad: "grad-6", hot: false,
+      image: "https://mypromo.azureedge.net/promotions/thumb/mypromo-2825f51167b345bc916fc19fc3eff38c.jpg",
+      order_url: "https://www.mypromo.lk/popeyeslk/promotions"
+    },
+    {
+      title: "Grilled Big Box for 2",
+      description: "A lighter twist on the Big Box — grilled chicken perfection for two, packed with bold Louisiana seasoning. Available for dine-in, takeaway or delivery.",
+      price: "From Rs. 1,550", category: "combo", badge: "Grilled", badgeClass: "badge-combo",
+      priceClass: "", valid_until: "2027-02-19", emoji: "🥗", grad: "grad-7", hot: false,
+      image: "https://mypromo.azureedge.net/promotions/thumb/mypromo-54c6cdbda2c64135ba4cf0e4e90fe126.jpg",
+      order_url: "https://www.mypromo.lk/popeyeslk/promotions"
+    },
+    {
+      title: "Seafood Big Box for 2",
+      description: "Popeyes' bold Louisiana touch on seafood! The Seafood Big Box for 2 is loaded with crispy fish and sides — a must-try for seafood lovers.",
+      price: "From Rs. 1,550", category: "new", badge: "New", badgeClass: "badge-new",
+      priceClass: "", valid_until: "2027-02-19", emoji: "🐟", grad: "grad-8", hot: false,
+      image: "https://mypromo.azureedge.net/promotions/thumb/mypromo-963ffd563be54443ae8cd524713f2ba8.jpg",
+      order_url: "https://www.mypromo.lk/popeyeslk/promotions"
+    }
+  ];
+
+  const filterMap = {
+    all:      () => true,
+    discount: p => p.category === 'discount',
+    combo:    p => p.category === 'combo',
+    limited:  p => p.category === 'limited',
+    new:      p => p.category === 'new'
+  };
+
+  function formatDate(d) {
+    if (!d) return null;
+    return new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function buildCard(p) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const hotHTML   = p.hot ? `<div class="hot-badge">🔥 HOT</div>` : '';
+    const validHTML = p.valid_until ? `<span class="validity">Until ${formatDate(p.valid_until)}</span>` : '';
+
+    card.innerHTML = `
+      <div class="card-visual ${p.grad}">
+        <img src="${p.image}" alt="${p.title}" loading="lazy"
+             onerror="this.style.display='none';this.parentElement.querySelector('.food-emoji').style.display='block'">
+        <div class="food-emoji">${p.emoji}</div>
+        <div class="card-visual-overlay"></div>
+        <span class="badge ${p.badgeClass}">${p.badge}</span>
+        ${hotHTML}
+      </div>
+      <div class="card-body">
+        <div class="card-title">${p.title}</div>
+        <div class="card-desc">${p.description}</div>
+        <div class="card-footer">
+          <div><div class="price ${p.priceClass}">${p.price}</div>${validHTML}</div>
+          <a class="order-btn" href="${p.order_url}" target="_blank" rel="noopener">
+            Order Now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+      </div>`;
+    return card;
+  }
+
+  function render(filter) {
+    const grid = document.getElementById('grid');
+    const empty = document.getElementById('empty');
+    grid.querySelectorAll('.card').forEach(c => c.remove());
+    const filtered = promos.filter(filterMap[filter] || filterMap.all);
+    if (filtered.length === 0) { empty.classList.add('show'); }
+    else { empty.classList.remove('show'); filtered.forEach(p => grid.appendChild(buildCard(p))); }
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    });
+  });
+
+  render('all');
+</script>
+
+<script>
+(async function() {
+  const BRAND = 'popeyes';
+  let statusEl = document.createElement('div');
+  statusEl.id = 'live-status';
+  statusEl.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px 16px;font-size:0.75rem;color:rgba(255,255,255,0.6);z-index:999;display:none;';
+  document.body.appendChild(statusEl);
+
+  function showStatus(msg, color) {
+    statusEl.style.display = 'block';
+    statusEl.style.borderColor = color || 'rgba(255,255,255,0.1)';
+    statusEl.textContent = msg;
+    setTimeout(() => statusEl.style.display = 'none', 4000);
+  }
+
+  try {
+    const r = await fetch(`/api/offers/${BRAND}`, {signal: AbortSignal.timeout(3000)});
+    if (!r.ok) { showStatus('ℹ️ Click Refresh on homepage for latest offers'); return; }
+    const d = await r.json();
+    if (!d.promos || !d.promos.length) return;
+
+    // Merge server promos into existing cards — update images if we have them
+    const cards = document.querySelectorAll('.card');
+    d.promos.forEach((p, i) => {
+      if (i < cards.length && p.image) {
+        const img = cards[i].querySelector('img');
+        if (img && p.image) img.src = p.image;
+        if (p.title) {
+          const h = cards[i].querySelector('.card-title, h3, .title');
+          if (h) h.textContent = p.title;
+        }
+        if (p.validity) {
+          const v = cards[i].querySelector('.validity, .valid, .date');
+          if (v) v.textContent = '📅 Valid until: ' + p.validity;
+        }
+      }
+    });
+    showStatus(`✓ Live data loaded · ${d.updated}`, 'rgba(76,175,80,0.5)');
+  } catch(e) {
+    // Server not running — silently use hardcoded data
+  }
+})();
+</script>
+</body>
+</html>

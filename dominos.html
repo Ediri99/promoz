@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domino's Sri Lanka — Offers & Promotions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #006491;
+      --blue-light: #0094d4;
+      --red: #e21836;
+      --blue-glow: rgba(0,100,145,0.5);
+      --red-glow: rgba(226,24,54,0.4);
+      --glass-bg: rgba(255,255,255,0.06);
+      --glass-border: rgba(255,255,255,0.1);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255,255,255,0.65);
+      --text-muted: rgba(255,255,255,0.38);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #00060f;
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background */
+    .bg {
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 15% 10%, rgba(0,80,130,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 70% at 85% 90%, rgba(226,24,54,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 100% 100% at 50% 50%, #00101f 0%, #000810 100%);
+    }
+    .bg::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(0,148,212,0.07) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(226,24,54,0.06) 0%, transparent 35%);
+      animation: bgpulse 9s ease-in-out infinite alternate;
+    }
+    @keyframes bgpulse { from { opacity: 0.5; } to { opacity: 1; } }
+
+    .wrapper { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(28px) saturate(1.6);
+      -webkit-backdrop-filter: blur(28px) saturate(1.6);
+      background: rgba(0,6,15,0.84);
+      border-bottom: 1px solid rgba(0,100,145,0.22);
+      padding: 0;
+    }
+    header::before {
+      content: ''; display: block; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--blue), var(--blue-light), var(--red), var(--blue-light), var(--blue), transparent);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 14px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+    .logo-icon {
+      width: 50px; height: 50px; border-radius: 14px;
+      background: linear-gradient(135deg, #0094d4, #004d7a);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 800; color: #fff; letter-spacing: -0.5px; text-align: center;
+      line-height: 1.2;
+      box-shadow: 0 0 24px var(--blue-glow), 0 4px 14px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+    .logo-text strong { display: block; font-size: 19px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+    .logo-text span { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .header-tag {
+      background: rgba(0,100,145,0.12); border: 1px solid rgba(0,100,145,0.28);
+      border-radius: 50px; padding: 7px 16px;
+      font-size: 12px; font-weight: 500; color: var(--text-secondary);
+      backdrop-filter: blur(10px); white-space: nowrap;
+    }
+    .header-tag span { color: #38c1ff; font-weight: 600; }
+    .header-order-btn {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: #fff; text-decoration: none;
+      padding: 8px 18px; border-radius: 50px;
+      font-size: 12px; font-weight: 600;
+      box-shadow: 0 0 16px var(--blue-glow);
+      transition: opacity 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .header-order-btn:hover { opacity: 0.88; box-shadow: 0 0 28px var(--blue-glow); }
+
+    /* ── Banner ── */
+    .banner {
+      background: linear-gradient(135deg, rgba(0,100,145,0.14) 0%, rgba(0,30,60,0.2) 50%, rgba(226,24,54,0.08) 100%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 28px;
+    }
+    .banner-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .banner-left h2 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 4px; }
+    .banner-left p { font-size: 13px; color: var(--text-secondary); }
+    .banner-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 50px; padding: 5px 13px;
+      font-size: 11px; font-weight: 500; color: var(--text-secondary);
+      backdrop-filter: blur(8px);
+    }
+    .chip.hot { border-color: rgba(0,148,212,0.45); color: #38c1ff; background: rgba(0,100,145,0.12); }
+    .chip.red { border-color: rgba(226,24,54,0.4); color: #ff6b7a; background: rgba(226,24,54,0.1); }
+
+    /* ── Filters ── */
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding: 28px 20px 32px; }
+    .filter-btn {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 50px; padding: 9px 22px;
+      font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+      color: var(--text-secondary); cursor: pointer; transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+    .filter-btn:hover { background: rgba(0,100,145,0.18); border-color: rgba(0,148,212,0.4); color: #fff; }
+    .filter-btn.active { background: var(--blue); border-color: var(--blue-light); color: #fff; box-shadow: 0 0 20px var(--blue-glow); }
+
+    /* ── Grid ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 22px; padding: 0 0 60px; }
+
+    /* ── Card ── */
+    .card {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: 20px; overflow: hidden;
+      backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex; flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px var(--blue-glow);
+      border-color: rgba(0,148,212,0.35);
+    }
+
+    /* Card image */
+    .card-visual { position: relative; height: 210px; overflow: hidden; }
+    .card-visual img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease; display: block;
+    }
+    .card:hover .card-visual img { transform: scale(1.07); }
+    .card-visual .food-emoji {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      font-size: 72px; line-height: 1;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.6));
+      z-index: 1; display: none;
+    }
+    .card-visual-overlay {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(to bottom, transparent 40%, rgba(0,6,15,0.75) 100%);
+    }
+    .card-visual::before {
+      content: ''; position: absolute; border-radius: 50%;
+      width: 130px; height: 130px;
+      background: radial-gradient(circle, rgba(0,148,212,0.15), transparent);
+      top: -30px; right: -30px; z-index: 1;
+    }
+
+    /* Gradients */
+    .grad-1 { background: linear-gradient(135deg, #001428 0%, #003d6b 50%, #00060f 100%); }
+    .grad-2 { background: linear-gradient(135deg, #1a0008 0%, #5c001c 50%, #00060f 100%); }
+    .grad-3 { background: linear-gradient(135deg, #001428 0%, #004080 50%, #001428 100%); }
+    .grad-4 { background: linear-gradient(135deg, #0a0020 0%, #1e0060 50%, #00060f 100%); }
+    .grad-5 { background: linear-gradient(135deg, #001428 0%, #005c45 50%, #00060f 100%); }
+    .grad-6 { background: linear-gradient(135deg, #1a0a00 0%, #5c2e00 50%, #00060f 100%); }
+    .grad-7 { background: linear-gradient(135deg, #001428 0%, #002d5c 50%, #001428 100%); }
+    .grad-8 { background: linear-gradient(135deg, #0a0010 0%, #3d0050 50%, #00060f 100%); }
+
+    /* Badges */
+    .badge {
+      position: absolute; top: 12px; left: 12px; z-index: 2;
+      padding: 4px 11px; border-radius: 50px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .badge-combo   { background: rgba(0,148,212,0.22); border: 1px solid rgba(0,148,212,0.5); color: #38c1ff; }
+    .badge-discount{ background: rgba(226,24,54,0.22); border: 1px solid rgba(226,24,54,0.5); color: #ff6b7a; }
+    .badge-limited { background: rgba(255,200,0,0.18); border: 1px solid rgba(255,200,0,0.42); color: #ffd700; }
+    .badge-new     { background: rgba(0,200,100,0.18); border: 1px solid rgba(0,200,100,0.4); color: #00e676; }
+    .badge-bank    { background: rgba(130,0,200,0.2); border: 1px solid rgba(180,0,255,0.4); color: #d06aff; }
+
+    .hot-badge {
+      position: absolute; top: 12px; right: 12px; z-index: 2;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      border-radius: 50px; padding: 4px 10px; font-size: 10px; font-weight: 700; color: #fff;
+      box-shadow: 0 0 12px var(--blue-glow);
+      animation: hotpulse 2s ease-in-out infinite;
+    }
+    @keyframes hotpulse {
+      0%,100% { box-shadow: 0 0 12px var(--blue-glow); }
+      50%      { box-shadow: 0 0 24px rgba(0,148,212,0.75); }
+    }
+
+    /* Body */
+    .card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .card-title { font-size: 15px; font-weight: 700; color: #fff; line-height: 1.35; }
+    .card-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; }
+    .price { font-size: 18px; font-weight: 800; color: #38c1ff; }
+    .price.red { color: #ff6b7a; }
+    .validity { font-size: 10px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+    .validity::before { content: '⏳'; font-size: 9px; }
+
+    .order-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: #fff; text-decoration: none;
+      padding: 9px 18px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600;
+      transition: opacity 0.2s, box-shadow 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .order-btn:hover { opacity: 0.88; box-shadow: 0 0 20px var(--blue-glow); transform: scale(1.04); }
+    .order-btn svg { width: 13px; height: 13px; }
+
+    .empty { display: none; text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 15px; grid-column: 1/-1; }
+    .empty.show { display: block; }
+
+    footer { border-top: 1px solid var(--glass-border); padding: 28px 20px; text-align: center; }
+    footer p { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
+    footer a { color: #38c1ff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .banner { padding: 16px 20px; }
+      .filters { padding: 20px 20px 24px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="https://pizzaonline.dominoslk.com/" target="_blank" rel="noopener">
+      <div class="logo-icon">DOM<br>INO'S</div>
+      <div class="logo-text">
+        <strong>Domino's Sri Lanka</strong>
+        <span>Oh Yes We Did!</span>
+      </div>
+    </a>
+    <div class="header-right">
+      <div class="header-tag">🍕 Deals updated <span>Sep 2026</span></div>
+      <a class="header-order-btn" href="https://pizzaonline.dominoslk.com/" target="_blank" rel="noopener">Order Now →</a>
+    </div>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="banner-inner">
+    <div class="banner-left">
+      <h2>🍕 Today's Best Domino's Deals</h2>
+      <p>Latest offers &amp; promotions from Domino's Pizza Sri Lanka — updated September 2026</p>
+    </div>
+    <div class="banner-chips">
+      <span class="chip hot">⚡ Pizza Mania from Rs. 1,199</span>
+      <span class="chip">🧀 Cheeseilicious Festival</span>
+      <span class="chip red">💳 Bank Card Discounts</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All Offers</button>
+    <button class="filter-btn" data-filter="discount">🏷 Discounts</button>
+    <button class="filter-btn" data-filter="combo">🍕 Combos</button>
+    <button class="filter-btn" data-filter="limited">⏳ Limited Time</button>
+    <button class="filter-btn" data-filter="new">✨ New Items</button>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="empty" id="empty">No offers in this category right now. Check back soon! 🍕</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrapper">
+    <p>
+      Offers sourced from <a href="https://pizzaonline.dominoslk.com/" target="_blank">dominoslk.com</a> &amp; verified promotions as of September 2026.<br/>
+      Prices and availability may change. Order via <a href="https://pizzaonline.dominoslk.com/" target="_blank">dominoslk.com</a> or call <a href="tel:+94117777888">+94 11 777 7888</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+  const promos = [
+    {
+      title: "Pizza Mania — 4 Regular Pizzas",
+      description: "Four fabulous pizzas for the price of one great deal! Choose from BBQ Remedy, Chicken Hot Wave, and more crowd-favourite flavours.",
+      price: "Rs. 1,199", category: "combo", badge: "Best Seller", badgeClass: "badge-combo",
+      priceClass: "", valid_until: null, emoji: "🍕", grad: "grad-1", hot: true,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/mypromo.lk-promo-427fa346a805406781cb0661c5031e40.jpg",
+      order_url: "https://pizzaonline.dominoslk.com/"
+    },
+    {
+      title: "Korean Cheese Burst Pizza",
+      description: "Part of the Cheeseilicious Festival — a bold Korean-inspired pizza with a gooey cheese-burst crust that's impossible to resist.",
+      price: "Rs. 3,099", category: "new", badge: "New", badgeClass: "badge-new",
+      priceClass: "", valid_until: null, emoji: "🧀", grad: "grad-2", hot: false,
+      image: "https://fastfoodsmenu.com/wp-content/uploads/2025/09/Dominos-Pizza-Menu-Prices-Sri-Lanka.webp",
+      order_url: "https://pizzaonline.dominoslk.com/"
+    },
+    {
+      title: "Cheese Volcano Pizza",
+      description: "An eruption of cheese in every bite. Domino's Cheeseilicious Festival special — one of the most indulgent pizzas on the menu.",
+      price: "Rs. 1,799", category: "new", badge: "New", badgeClass: "badge-new",
+      priceClass: "", valid_until: null, emoji: "🌋", grad: "grad-3", hot: false,
+      image: "https://fastfoodsmenu.com/wp-content/uploads/2025/09/Dominos-Pizza-Menu-Prices-Sri-Lanka.webp",
+      order_url: "https://pizzaonline.dominoslk.com/"
+    },
+    {
+      title: "Signature Beef Pepperoni",
+      description: "Premium pepperoni slices stacked generously on a classic Domino's base — the signature choice for meat lovers.",
+      price: "Rs. 2,199", category: "discount", badge: "Popular", badgeClass: "badge-discount",
+      priceClass: "red", valid_until: null, emoji: "🍕", grad: "grad-4", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/promo.lk-promo-0b0511ad6d8b4b76a283b5c9f3cbc635.jpg",
+      order_url: "https://pizzaonline.dominoslk.com/"
+    },
+    {
+      title: "Smart Saver Combo",
+      description: "Get more for less! The Smart Saver gives you a satisfying Domino's meal at an everyday low price — perfect for a quick solo lunch.",
+      price: "Rs. 1,499", category: "combo", badge: "Value", badgeClass: "badge-combo",
+      priceClass: "", valid_until: null, emoji: "💰", grad: "grad-5", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/promo.lk-promo-0b0511ad6d8b4b76a283b5c9f3cbc635.jpg",
+      order_url: "https://pizzaonline.dominoslk.com/"
+    },
+    {
+      title: "Commercial Bank Card — 20% Off",
+      description: "Pay with your Commercial Bank Credit Card and get 20% off, or 10% off on Debit Cards. Valid on Thursdays & Saturdays for dine-in & carryout.",
+      price: "20% Off", category: "limited", badge: "Thu & Sat", badgeClass: "badge-limited",
+      priceClass: "red", valid_until: null, emoji: "💳", grad: "grad-6", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/mypromo.lk-promo-9b09c3ac7d864901b8918c259e03b157.jpg",
+      order_url: "https://pizzaonline.dominoslk.com/"
+    },
+    {
+      title: "Celebration Combo",
+      description: "The ultimate party platter — multiple pizzas, sides, and drinks bundled together. Perfect for gatherings, birthdays, and celebrations.",
+      price: "Rs. 8,999", category: "combo", badge: "Family", badgeClass: "badge-combo",
+      priceClass: "", valid_until: null, emoji: "🎉", grad: "grad-7", hot: false,
+      image: "https://promolkwebsite.blob.core.windows.net/promotions/promo.lk-promo-0b0511ad6d8b4b76a283b5c9f3cbc635.jpg",
+      order_url: "https://pizzaonline.dominoslk.com/"
+    },
+    {
+      title: "Choco Lava Cake",
+      description: "Warm, gooey chocolate lava cake — the perfect sweet finish to any pizza order. A Domino's dessert classic you can't skip.",
+      price: "Rs. 529", category: "discount", badge: "Dessert", badgeClass: "badge-discount",
+      priceClass: "red", valid_until: null, emoji: "🍫", grad: "grad-8", hot: false,
+      image: "https://fastfoodsmenu.com/wp-content/uploads/2025/09/Dominos-Pizza-Menu-Prices-Sri-Lanka.webp",
+      order_url: "https://pizzaonline.dominoslk.com/"
+    }
+  ];
+
+  const filterMap = {
+    all:      () => true,
+    discount: p => p.category === 'discount',
+    combo:    p => p.category === 'combo',
+    limited:  p => p.category === 'limited',
+    new:      p => p.category === 'new'
+  };
+
+  function buildCard(p) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const hotHTML = p.hot ? `<div class="hot-badge">⭐ HOT</div>` : '';
+
+    card.innerHTML = `
+      <div class="card-visual ${p.grad}">
+        <img src="${p.image}" alt="${p.title}" loading="lazy"
+             onerror="this.style.display='none';this.parentElement.querySelector('.food-emoji').style.display='block'">
+        <div class="food-emoji">${p.emoji}</div>
+        <div class="card-visual-overlay"></div>
+        <span class="badge ${p.badgeClass}">${p.badge}</span>
+        ${hotHTML}
+      </div>
+      <div class="card-body">
+        <div class="card-title">${p.title}</div>
+        <div class="card-desc">${p.description}</div>
+        <div class="card-footer">
+          <div><div class="price ${p.priceClass}">${p.price}</div></div>
+          <a class="order-btn" href="${p.order_url}" target="_blank" rel="noopener">
+            Order Now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+      </div>`;
+    return card;
+  }
+
+  function render(filter) {
+    const grid = document.getElementById('grid');
+    const empty = document.getElementById('empty');
+    grid.querySelectorAll('.card').forEach(c => c.remove());
+    const filtered = promos.filter(filterMap[filter] || filterMap.all);
+    if (filtered.length === 0) { empty.classList.add('show'); }
+    else { empty.classList.remove('show'); filtered.forEach(p => grid.appendChild(buildCard(p))); }
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    });
+  });
+
+  render('all');
+</script>
+
+<script>
+(async function() {
+  const BRAND = 'dominos';
+  let statusEl = document.createElement('div');
+  statusEl.id = 'live-status';
+  statusEl.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px 16px;font-size:0.75rem;color:rgba(255,255,255,0.6);z-index:999;display:none;';
+  document.body.appendChild(statusEl);
+
+  function showStatus(msg, color) {
+    statusEl.style.display = 'block';
+    statusEl.style.borderColor = color || 'rgba(255,255,255,0.1)';
+    statusEl.textContent = msg;
+    setTimeout(() => statusEl.style.display = 'none', 4000);
+  }
+
+  try {
+    const r = await fetch(`/api/offers/${BRAND}`, {signal: AbortSignal.timeout(3000)});
+    if (!r.ok) { showStatus('ℹ️ Click Refresh on homepage for latest offers'); return; }
+    const d = await r.json();
+    if (!d.promos || !d.promos.length) return;
+
+    // Merge server promos into existing cards — update images if we have them
+    const cards = document.querySelectorAll('.card');
+    d.promos.forEach((p, i) => {
+      if (i < cards.length && p.image) {
+        const img = cards[i].querySelector('img');
+        if (img && p.image) img.src = p.image;
+        if (p.title) {
+          const h = cards[i].querySelector('.card-title, h3, .title');
+          if (h) h.textContent = p.title;
+        }
+        if (p.validity) {
+          const v = cards[i].querySelector('.validity, .valid, .date');
+          if (v) v.textContent = '📅 Valid until: ' + p.validity;
+        }
+      }
+    });
+    showStatus(`✓ Live data loaded · ${d.updated}`, 'rgba(76,175,80,0.5)');
+  } catch(e) {
+    // Server not running — silently use hardcoded data
+  }
+})();
+</script>
+</body>
+</html>
