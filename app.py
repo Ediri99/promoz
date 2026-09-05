@@ -2,7 +2,8 @@
 PromoZ — Flask web app for Render/Railway deployment.
 Auto-refreshes offer data every 6 hours.
 """
-import os, re, json, threading, urllib.request, gzip
+import os, re, json, threading
+import cloudscraper
 from datetime import datetime
 from flask import Flask, jsonify, send_from_directory, abort
 
@@ -19,16 +20,6 @@ BRANDS = {
     "pizzahut": ["https://mypromo.lk/pizzahutlk/promotions",
                  "https://mypromo.lk/pizzahut/promotions"],
     "popeyes":  ["https://mypromo.lk/popeyeslk/promotions"],
-}
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive",
-    "Upgrade-Insecure-Requests": "1",
-    "Cache-Control": "max-age=0",
-    "Referer": "https://www.google.com/",
 }
 
 # ── In-memory cache (+ optional file persistence) ───────────────────────────
@@ -53,18 +44,18 @@ def save_cache():
         print(f"Cache save error: {e}")
 
 # ── Scraper ──────────────────────────────────────────────────────────────────
+scraper = cloudscraper.create_scraper()
+
 def fetch_page(url):
     try:
-        req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=20) as r:
-            raw = r.read()
-            if r.info().get("Content-Encoding") == "gzip":
-                raw = gzip.decompress(raw)
-            return raw.decode("utf-8", errors="ignore")
+        r = scraper.get(url, timeout=20)
+        if r.status_code == 200:
+            return r.text
+        print(f"  HTTP {r.status_code} for {url}")
+        return None
     except Exception as e:
         print(f"  Fetch error {url}: {e}")
         return None
-
 def scrape_brand(brand):
     urls = BRANDS.get(brand, [])
     html = None
